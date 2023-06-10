@@ -2,10 +2,13 @@ import './App.css'
 import { useEffect, useState } from "react";
 import axios from "axios"
 import CharacterList from './components/CharacterList/CharacterList';
+import InputFilter from './components/InputFilter/InputFilter';
+import Selector from './components/Selector/Selector';
 
 function App() {
   const [animes, setAnimes] = useState([]);
-  const [currentAnime, setCurrentAnime] = useState(['647ef86d34e52d1d8e06d2b0']);
+  const [currentAnime, setCurrentAnime] = useState(['all']);
+  const [filterName, setFilterName] = useState('');
   const [characters, setCharacters] = useState([]);
 
   const handleSelect = (event) => {
@@ -24,20 +27,20 @@ function App() {
     const getCharacters = async() => {
       const character = await axios.get('http://localhost:8000/animes/characters/' + currentAnime);
       setCharacters(character.data);
-      console.log(character.data);
+      //console.log(character.data);
     };
     getCharacters();
   }, [currentAnime]);
 
+  const handleFilterName = (value) => {
+    setFilterName(value);
+  };
+
   return (
     <>
-      <select name="" id="" onChange={handleSelect}>
-        {animes.map((anime, i) => (
-          <option key={i} value={anime._id}>{anime.name}</option>
-        ))}
-      </select>
-
-      <CharacterList characters={characters}/>
+      <Selector animes={animes} handleSelect={handleSelect} />
+      <InputFilter handleFilterName={handleFilterName} />
+      <CharacterList characters={characters.filter((char) => char.name.toLowerCase().includes(filterName.toLowerCase()))} />
     </>
   )
 }
