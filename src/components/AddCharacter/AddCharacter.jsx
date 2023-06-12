@@ -28,7 +28,8 @@ function AddCharacter() {
     }
 
     const handleCancel = () => {
-        setFormState(initial_state)
+        setFormState(initial_state);
+        window.location.replace('/');
     }
 
     const handleClick = () => {
@@ -47,6 +48,7 @@ function AddCharacter() {
                 API.put("/animes/id/"+res.data._id, config2)
                 .then((res2) => {
                     console.log(res2);
+                    window.location.replace('/');
                 });
         });
     }

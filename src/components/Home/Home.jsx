@@ -40,6 +40,9 @@ function Home() {
 
     return (
         <>
+          <Link to={`/addanime`}>
+                    <button>ADD ANIME</button>
+          </Link>
           <Selector animes={animes} handleSelect={handleSelect} />
           <InputFilter handleFilterName={handleFilterName} />
           {currentAnime !== "all" && currentAnime !== "" ?
