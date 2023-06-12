@@ -3,11 +3,12 @@ import InputFilter from '../InputFilter/InputFilter';
 import Selector from '../Selector/Selector';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"
 
 function Home() {
 
     const [animes, setAnimes] = useState([]);
-    const [currentAnime, setCurrentAnime] = useState(['all']);
+    const [currentAnime, setCurrentAnime] = useState('all');
     const [filterName, setFilterName] = useState('');
     const [characters, setCharacters] = useState([]);
 
@@ -35,11 +36,17 @@ function Home() {
     const handleFilterName = (value) => {
         setFilterName(value);
     };
+    console.log(currentAnime);
 
     return (
         <>
           <Selector animes={animes} handleSelect={handleSelect} />
           <InputFilter handleFilterName={handleFilterName} />
+          {currentAnime !== "all" && currentAnime !== "" ?
+            <Link to={`/addcharacter/${currentAnime}`}>
+                    <button>ADD</button>
+            </Link>
+          : <> </>}
           <CharacterList characters={characters.filter((char) => char.name.toLowerCase().includes(filterName.toLowerCase()))} />
         </>
       )
