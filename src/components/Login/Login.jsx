@@ -24,7 +24,7 @@ function Login() {
           if (response.statusText === 'OK') {
             const token = response.data.token;
             const email = response.data.user.email;
-            alert(token); 
+            //alert(token); 
     
             localStorage.setItem('email', email);
             localStorage.setItem('token', token);

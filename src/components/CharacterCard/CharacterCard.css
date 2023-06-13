@@ -6,7 +6,7 @@
 
 
 .nombre{
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: large;
     color: rgb(29, 29, 97);
     background-color:hsla(225, 100%, 82%, 0.81);
@@ -15,6 +15,8 @@
     margin-bottom: 0;
     width: 100%;
     
-    
-   
-}
+    }
+
+    .nombre:hover{
+        color: rgb(151, 8, 67);
+    }

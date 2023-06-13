@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { API } from "../../services/api";
 import './AddCharacter.css'
+import { Link } from "react-router-dom"
 
 const initial_state = {
     name: "",
@@ -30,7 +31,7 @@ function AddCharacter() {
 
     const handleCancel = () => {
         setFormState(initial_state);
-        window.location.replace('/');
+        window.location.replace('/home');
     }
 
     const handleClick = () => {
@@ -49,13 +50,19 @@ function AddCharacter() {
                 API.put("/animes/id/"+res.data._id, config2)
                 .then((res2) => {
                     console.log(res2);
-                    window.location.replace('/home');
+                    window.location.replace('/');
                 });
         });
     }
 
     return (
+        <>
+        <Link to={`/home`}>
+                <span className="home">HOME</span>
+            </Link>
         <div  className="box">
+            
+
             <form  onSubmit={(ev) => ev.preventDefault()}>
                <div className="nameAgeGender">
                 <label htmlFor="name">Name</label>
@@ -97,6 +104,7 @@ function AddCharacter() {
                     </div>
             </form>
         </div>
+        </>
     )
 }
 

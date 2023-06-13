@@ -41,6 +41,12 @@ function Home() {
 
     return (
         <> 
+        <Link to={`/home`}>
+          <p className="home">HOME</p>
+        </Link>
+
+      <img className="logo" src="./src/assets/img/logo.png" alt="logo"/>
+
       <div className='botonGeneral'>
         <div className='botonAdd'>
            <Link to={`/addanime`}>

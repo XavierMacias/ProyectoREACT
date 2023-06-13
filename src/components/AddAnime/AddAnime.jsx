@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { API } from "../../services/api";
 import './addAnime.css';
+import { Link } from "react-router-dom"
 
 const initial_state = {
     name: "",
@@ -24,7 +25,7 @@ function AddAnime() {
 
     const handleCancel = () => {
         setFormState(initial_state);
-        window.location.replace('/');
+        window.location.replace('/home');
     }
 
     const handleClick = () => {
@@ -32,7 +33,7 @@ function AddAnime() {
         API.post("/animes", formState)
             .then((res) => {
                 console.log(res.data)
-                window.location.replace('/home');
+                window.location.replace('/');
         });
     }
 
@@ -53,7 +54,12 @@ function AddAnime() {
     };
 
     return (
+        <>
+        <Link to={`/home`}>
+                <span className="home">HOME</span>
+        </Link>
     <div className="formu">
+        
          <form onSubmit={(ev) => ev.preventDefault()}>
         <div className="nameYear">
                 
@@ -101,6 +107,7 @@ function AddAnime() {
                       </div>
             </form>
     </div>
+    </>
     )
 }
 

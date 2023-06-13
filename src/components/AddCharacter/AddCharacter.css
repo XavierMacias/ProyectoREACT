@@ -1,4 +1,5 @@
 .box{
+
     border-radius: 15px;
     background-color:#ffffff52;
     padding: 70px 100px;
@@ -9,7 +10,7 @@
 
 
 .nameAgeGender{
-    
+    color:rgb(29, 29, 97);;;
     display: flex;
     justify-items: center;
     justify-content:space-evenly;
@@ -19,9 +20,15 @@
 }
 
 .tres{
+    color: rgb(29, 29, 97);;;
+    border: none;
+    background-color:hsla(222, 82%, 85%, 0.83);
     border-radius: 20px;
 }
 .otrostres{
+    color: rgb(29, 29, 97);;;
+    border: none;
+    background-color:hsla(222, 100%, 83%, 0.83);
     border-radius: 20px;
 }
 
@@ -39,7 +46,29 @@
 }
 
 .boton{
-    margin-top: 15px;
+    
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
     margin-left: 4px;
 
+}
+
+
+
+
+.cancel{
+    cursor: pointer;
+}
+
+.cancel:hover{
+    color: rgb(38, 38, 138);
+}
+
+.add{
+    cursor: pointer;
+}
+.add:hover{
+     color: rgb(38, 38, 138);
 }
