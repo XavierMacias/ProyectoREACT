@@ -32,7 +32,7 @@ function AddAnime() {
         API.post("/animes", formState)
             .then((res) => {
                 console.log(res.data)
-                window.location.replace('/');
+                window.location.replace('/home');
         });
     }
 
