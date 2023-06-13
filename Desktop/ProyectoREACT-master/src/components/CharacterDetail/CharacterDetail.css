@@ -1,0 +1,27 @@
+
+.charname{
+    font-size: xx-large;
+}
+
+.imagen{
+    height: 300px;
+    border-radius: 10px;
+}
+
+.info{
+    font-size: large;
+}
+.caja{
+    margin-top: 80px;
+    border-radius: 30px;
+    background-color: hsla(227, 83%, 58%, 0.51);
+    padding: 15px;
+}
+
+
+.description{
+    font-size: large;
+    max-width: 400px;
+    white-space:pre-wrap;
+    
+}
