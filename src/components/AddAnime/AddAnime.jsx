@@ -55,10 +55,10 @@ function AddAnime() {
         <div className="">
             <form onSubmit={(ev) => ev.preventDefault()}>
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" onChange={handleInput} value={formState.name} />
+                <input type="text" id="name" name="name" required onChange={handleInput} value={formState.name} />
 
                 <label htmlFor="year">Year</label>
-                <input type="number" id="year" name="year" onChange={handleInput} value={formState.year} />
+                <input type="number" id="year" name="year" min="0" required onChange={handleInput} value={formState.year} />
 
                 <label htmlFor="genre">Genre:</label>
 

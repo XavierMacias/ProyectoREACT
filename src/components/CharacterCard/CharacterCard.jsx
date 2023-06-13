@@ -1,8 +1,10 @@
+import './CharacterCard.css';
+
 function CharacterCard({ character }) {
     return (
         <article>
             <p>{character.name}</p> 
-            <img src={character.image} alt={character.name} />  
+            <img className="imgChar" src={character.image} alt={character.name} />  
         </article>
     )
 }

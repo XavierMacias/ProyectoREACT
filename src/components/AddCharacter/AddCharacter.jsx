@@ -57,10 +57,10 @@ function AddCharacter() {
         <div className="">
             <form onSubmit={(ev) => ev.preventDefault()}>
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" onChange={handleInput} value={formState.name} />
+                <input type="text" id="name" name="name" required onChange={handleInput} value={formState.name} />
 
                 <label htmlFor="age">Age</label>
-                <input type="number" id="age" name="age" onChange={handleInput} value={formState.age} />
+                <input type="number" id="age" name="age" min="0" required onChange={handleInput} value={formState.age} />
 
                 <label htmlFor="gender">Gender:</label>
                 <select name="gender" id="gender" onChange={handleInput}>
@@ -70,7 +70,7 @@ function AddCharacter() {
                 </select>
 
                 <label htmlFor="race">Race</label>
-                <input type="text" id="race" name="race" onChange={handleInput} value={formState.race} />
+                <input type="text" id="race" name="race" required onChange={handleInput} value={formState.race} />
 
                 <label htmlFor="description">Description</label>
                 <input type="text" id="description" name="description" onChange={handleInput} value={formState.description} />

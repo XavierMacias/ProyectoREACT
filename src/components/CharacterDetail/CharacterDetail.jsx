@@ -19,7 +19,13 @@ function CharacterDetail() {
         <div>
             <h1>Character details</h1>
             <h3>{character.name}</h3>
+            <p>{character.gender}</p>
+            <p>{character.age}</p>
+            <p>{character.race}</p>
+            <p>{character.status}</p>
             <p>{character.description}</p>
+
+            <img src={character.image} alt={character.name} />
         </div>
     )
 }
