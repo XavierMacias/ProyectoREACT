@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import './CharacterDetail.css';
 
 function CharacterDetail() {
     const [character, setCharacter] = useState([]);
@@ -16,16 +17,17 @@ function CharacterDetail() {
     }, [id]);
 
     return (
-        <div>
-            <h1>Character details</h1>
-            <h3>{character.name}</h3>
+        <div className="caja">
+            <h2 className="charname">{character.name}</h2>
+            <div className="info">
             <p>{character.gender}</p>
             <p>{character.age}</p>
             <p>{character.race}</p>
             <p>{character.status}</p>
-            <p>{character.description}</p>
+            </div>
+            <p className="description">{character.description}</p>
 
-            <img src={character.image} alt={character.name} />
+            <img className="imagen" src={character.image} alt={character.name} />
         </div>
     )
 }

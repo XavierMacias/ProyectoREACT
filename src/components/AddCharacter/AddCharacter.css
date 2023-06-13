@@ -1,0 +1,45 @@
+.box{
+    border-radius: 15px;
+    background-color:#ffffff52;
+    padding: 70px 100px;
+    margin: 350px;
+    margin-top:250px ;
+    color: rgb(29, 29, 97);;
+}
+
+
+.nameAgeGender{
+    
+    display: flex;
+    justify-items: center;
+    justify-content:space-evenly;
+    gap: 10px;
+   
+   
+}
+
+.tres{
+    border-radius: 20px;
+}
+.otrostres{
+    border-radius: 20px;
+}
+
+
+.raceDescriptionStatus{
+    margin-top: 20px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.image{
+    margin-top: 15px;
+}
+
+.boton{
+    margin-top: 15px;
+    margin-left: 4px;
+
+}

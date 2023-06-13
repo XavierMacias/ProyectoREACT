@@ -40,16 +40,28 @@ function Home() {
     console.log(currentAnime);
 
     return (
-        <>
-          <Link to={`/addanime`}>
+        <> 
+      <div className='botonGeneral'>
+        <div className='botonAdd'>
+           <Link to={`/addanime`}>
                     <button>ADD ANIME</button>
-          </Link>
-          <Selector animes={animes} handleSelect={handleSelect} />
-          <InputFilter handleFilterName={handleFilterName} />
+           </Link>
+        </div>
+
+         <div className='botonCharacter'>
+            <Selector animes={animes} handleSelect={handleSelect} />
+            <InputFilter handleFilterName={handleFilterName} />
+           
+          </div>
+          
+        </div>
           {currentAnime !== "all" && currentAnime !== "" ?
+            
+         
             <Link to={`/addcharacter/${currentAnime}`}>
-                    <button>ADD</button>
+                    <button className='addCharacter'>ADD CHARACTER</button>
             </Link>
+          
           : <> </>}
           <CharacterList characters={characters.filter((char) => char.name.toLowerCase().includes(filterName.toLowerCase()))} />
         </>

@@ -1,4 +1,20 @@
 .imgChar {
     width: 200px;
     height: 150px;
+    
+}
+
+
+.nombre{
+    border-radius: 5px;
+    font-size: large;
+    color: rgb(29, 29, 97);
+    background-color:hsla(225, 100%, 82%, 0.81);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    width: 100%;
+    
+    
+   
 }

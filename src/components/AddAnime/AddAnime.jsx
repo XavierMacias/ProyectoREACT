@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { API } from "../../services/api";
+import './addAnime.css';
 
 const initial_state = {
     name: "",
@@ -52,15 +53,24 @@ function AddAnime() {
     };
 
     return (
-        <div className="">
-            <form onSubmit={(ev) => ev.preventDefault()}>
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" required onChange={handleInput} value={formState.name} />
-
-                <label htmlFor="year">Year</label>
-                <input type="number" id="year" name="year" min="0" required onChange={handleInput} value={formState.year} />
-
+    <div className="formu">
+         <form onSubmit={(ev) => ev.preventDefault()}>
+        <div className="nameYear">
+                
+             <div className="">
+                  <label htmlFor="name">Name</label>
+                  <input type="text" id="name"  className="name" name="name" required onChange={handleInput} value={formState.name} />
+             </div>
+                 
+                <div className="">
+                    <label htmlFor="year">Year</label>
+                     <input type="number" id="year" className="year"  name="year" min="0" required onChange={handleInput} value={formState.year} />
+                </div>
+           
+        </div>
+                <div className="genre"> 
                 <label htmlFor="genre">Genre:</label>
+                </div> 
 
                 <label htmlFor='custom-checkbox'></label>
                 <ul className="toppings-list">
@@ -81,14 +91,16 @@ function AddAnime() {
                     })}
                 </ul>
 
+                    
                 <label htmlFor="description">Description</label>
-                <input type="text" id="description" name="description" onChange={handleInput} value={formState.description} />
-
-                <input type="submit" value="Add" onClick={handleClick} />
-                <input type="button" value="Cancel" onClick={handleCancel} />
-
+                <input type="text" className="description" id="description" name="description" onChange={handleInput} value={formState.description} />
+                
+                <div className="addCancel">
+                <input type="submit" value="Add" className="add" onClick={handleClick} />
+                <input type="button" value="Cancel" className="cancel" onClick={handleCancel} />
+                      </div>
             </form>
-        </div>
+    </div>
     )
 }
 
