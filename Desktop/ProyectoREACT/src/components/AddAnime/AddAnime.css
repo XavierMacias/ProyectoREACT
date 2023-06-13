@@ -1,0 +1,78 @@
+
+
+  .formu{
+    color:  rgb(29, 29, 97);
+    background-color:hsla(222, 100%, 83%, 0.43)  ;
+    padding: 30px 60px;
+    border-radius: 5px;
+      
+}
+
+.genre{
+    margin-top: 10px;
+    font-size: x-large;
+  }
+
+.nameYear{
+ display: flex; 
+ gap: 35px;
+}
+
+.name{
+  
+    border-radius: 20px;
+   margin-left: 10px;
+ 
+}
+
+.description{
+    border-radius: 10px;
+   margin-left: 10px;
+   padding: 10px 40px;
+ 
+}
+
+.year{
+    border-radius: 20px;
+   margin-left: 10px;
+}
+
+.toppings-list{
+ color:  rgb(29, 29, 97);
+ display: grid;
+grid-template-columns: auto auto;
+justify-items: left;
+justify-content:space-around;
+
+
+}
+
+
+.add{
+    background-image: linear-gradient(180deg,#3E5DED,#788ffa);
+   /* background-color:#3E5DED;*/
+padding: 5px 25px;
+border: none;
+color: #eeeff8;
+border-radius: 60px ;
+
+
+}
+
+.cancel{
+background-image: linear-gradient(180deg,#AE0008,#c25d62);
+padding: 5px 25px;
+border: none;
+color: #eeeff8;
+border-radius: 60px ;
+
+}
+
+
+.addCancel{
+   margin-top: 20px; 
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+
+}
