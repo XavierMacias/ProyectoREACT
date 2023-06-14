@@ -1,0 +1,46 @@
+.loginform {
+    background-color: rgba(137, 43, 226, 0.25);
+    border-radius: 20%;
+    padding: 70px;
+    color: rgb(7, 7, 90);
+}
+
+.emailbox {
+    margin-bottom: 5px;
+}
+
+.email {
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.passwordbox {
+    margin-bottom: 15px;
+}
+
+.password {
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.loginbuton {
+    margin-bottom: 20px;
+    background-image: linear-gradient(180deg,#3a8c2c,#1bda5e);
+    padding: 5px 25px;
+    border: none;
+    color: #eeeff8;
+    border-radius: 60px;
+    font-family: 'Bonzai';
+}
+
+.loginbuton:hover{
+    color: rgb(38, 38, 138);
+}
+
+.registeraviso {
+    padding: 5px;
+    background-color: rgb(185, 111, 185);
+    color: rgb(7, 7, 90);
+}

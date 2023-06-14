@@ -1,6 +1,11 @@
 
 .charname{
     font-size: xx-large;
+    font-weight: bold;
+}
+
+.prop{
+    font-weight: bold;
 }
 
 .imagen{

@@ -27,6 +27,7 @@
     border-radius: 20px;
    margin-left: 10px;
    color: #101c50;
+   outline-color: rgb(149, 67, 189);
  
 }
 
@@ -37,6 +38,7 @@
    margin-left: 10px;
    padding: 10px 40px;
    color: #101c50;
+   outline-color: rgb(149, 67, 189);
  
 }
 
@@ -47,6 +49,7 @@
     border-radius: 20px;
    margin-left: 10px;
    color: #101c50;
+   outline-color: rgb(149, 67, 189);
 }
 
 .toppings-list{
@@ -62,7 +65,7 @@ justify-content:space-around;
 
 .add{
     background-image: linear-gradient(180deg,#3E5DED,#9dadf5);
- 
+    font-family: 'Bonzai';
 padding: 5px 25px;
 border: none;
 color: #eeeff8;
@@ -75,6 +78,7 @@ border-radius: 60px ;}
 .cancel{
 background-image: linear-gradient(180deg,#b82a7d,#c7a7a8);
 padding: 5px 25px;
+font-family: 'Bonzai';
 border: none;
 color: #eeeff8;
 border-radius: 60px ;

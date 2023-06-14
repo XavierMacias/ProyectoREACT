@@ -24,12 +24,14 @@
     border: none;
     background-color:hsla(222, 82%, 85%, 0.83);
     border-radius: 20px;
+    outline-color: rgb(149, 67, 189);
 }
 .otrostres{
     color: rgb(29, 29, 97);;;
     border: none;
     background-color:hsla(222, 100%, 83%, 0.83);
     border-radius: 20px;
+    outline-color: rgb(149, 67, 189);
 }
 
 
@@ -60,6 +62,7 @@
 
 .cancel{
     cursor: pointer;
+    font-family: 'Bonzai';
 }
 
 .cancel:hover{
@@ -68,6 +71,7 @@
 
 .add{
     cursor: pointer;
+    font-family: 'Bonzai';
 }
 .add:hover{
      color: rgb(38, 38, 138);

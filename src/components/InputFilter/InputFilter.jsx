@@ -1,3 +1,5 @@
+import "./InputFilter.css";
+
 function InputFilter( {handleFilterName} ) {
 
     const handleChange = (event) => {
@@ -7,7 +9,7 @@ function InputFilter( {handleFilterName} ) {
     return (
         <div>
             <label htmlFor="nameFilter"> </label>
-            <input type="text" id="nameFilter" placeholder="name..." onKeyUp={handleChange}/>
+            <input className="filter" type="text" id="nameFilter" placeholder="name..." onKeyUp={handleChange}/>
         </div>
     )
 }

@@ -41,10 +41,14 @@ function Home() {
 
     return (
         <> 
+      <div className='nav'>
         <Link to={`/home`}>
           <p className="home">HOME</p>
         </Link>
-
+        <Link to={`/`}>
+          <p className="loginlink">LOGIN</p>
+        </Link>
+      </div>
       <img className="logo" src="./src/assets/img/logo.png" alt="logo"/>
 
       <div className='botonGeneral'>

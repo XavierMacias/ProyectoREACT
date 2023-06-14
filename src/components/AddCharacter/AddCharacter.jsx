@@ -57,9 +57,14 @@ function AddCharacter() {
 
     return (
         <>
+        <div className='nav'>
         <Link to={`/home`}>
-                <span className="home">HOME</span>
-            </Link>
+          <p className="home">HOME</p>
+        </Link>
+        <Link to={`/`}>
+          <p className="loginlink">LOGIN</p>
+        </Link>
+      </div>
         <div  className="box">
             
 

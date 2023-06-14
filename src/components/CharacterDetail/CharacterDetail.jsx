@@ -19,17 +19,22 @@ function CharacterDetail() {
 
     return (
         <>
+        <div className='nav'>
         <Link to={`/home`}>
-            <span className="home">HOME</span>
+          <p className="home">HOME</p>
         </Link>
+        <Link to={`/`}>
+          <p className="loginlink">LOGIN</p>
+        </Link>
+      </div>
         <div className="caja">
             
             <h2 className="charname">{character.name}</h2>
             <div className="info">
-                <p>{character.gender}</p>
-                <p>{character.age}</p>
-                 <p>{character.race}</p>
-                 <p>{character.status}</p>
+                <p><span className="prop">Gender</span>: {character.gender}</p>
+                <p><span className="prop">Age</span>: {character.age}</p>
+                 <p><span className="prop">Race</span>: {character.race}</p>
+                 <p><span className="prop">Status</span>: {character.status}</p>
             </div>
             
             <p className="descriptione">{character.description}</p>

@@ -55,9 +55,14 @@ function AddAnime() {
 
     return (
         <>
+        <div className='nav'>
         <Link to={`/home`}>
-                <span className="home">HOME</span>
+          <p className="home">HOME</p>
         </Link>
+        <Link to={`/`}>
+          <p className="loginlink">LOGIN</p>
+        </Link>
+      </div>
     <div className="formu">
         
          <form onSubmit={(ev) => ev.preventDefault()}>

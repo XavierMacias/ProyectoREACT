@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { API } from "../../services/api";
+import './Register.css';
 
 const initial_state = {
     email: "",
@@ -25,26 +26,31 @@ function Register() {
         })
         .catch((error) => {
             console.log(error);
+            alert("Register error"); 
         });
     }
 
     return (
-        <>
+        <div className="registerform">
             <form  onSubmit={(ev) => ev.preventDefault()}>
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" className="regemail" name="email" required onChange={handleInput} value={formState.email}/>
+                <div className="emailbox2">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" className="regemail" name="email" required onChange={handleInput} value={formState.email}/>
+                </div>
 
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" className="regpassword" name="password" required onChange={handleInput} value={formState.password} />
+                <div className="passwordbox2">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" id="password" className="regpassword" name="password" required onChange={handleInput} value={formState.password} />
+                </div>
 
-                <input type="submit" className="register" value="Register" onClick={handleClick}/>
+                <input type="submit" className="registerbuton" value="Register" onClick={handleClick}/>
             </form>
 
             <Link to={`/`}>
-                <button><span>Already have an account? Login</span></button>
+                <button className="loginaviso"><span>Already have an account? Login</span></button>
             </Link>
             
-        </>
+        </div>
     )
 }
 

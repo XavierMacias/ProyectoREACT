@@ -1,0 +1,46 @@
+.registerform {
+    background-color: rgba(244, 229, 229, 0.25);
+    border-radius: 15%;
+    padding: 80px;
+    color: rgb(7, 7, 90);
+}
+
+.emailbox2 {
+    margin-bottom: 5px;
+}
+
+.regemail {
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.passwordbox2 {
+    margin-bottom: 15px;
+}
+
+.regpassword {
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.registerbuton {
+    margin-bottom: 20px;
+    background-image: linear-gradient(180deg,#471450,#9e39a0);
+    padding: 5px 25px;
+    border: none;
+    color: #eeeff8;
+    border-radius: 60px;
+    font-family: 'Bonzai';
+}
+
+.registerbuton:hover{
+    color: rgb(38, 38, 138);
+}
+
+.loginaviso {
+    padding: 5px;
+    background-color: rgb(238, 238, 238);
+    color: rgb(7, 7, 90);
+}
