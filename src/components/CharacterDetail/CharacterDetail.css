@@ -31,3 +31,27 @@
     white-space:pre-wrap;
     
 }
+
+.Alive {
+    color: green;
+}
+
+.Deceased {
+    color: red;
+}
+
+.Unknown {
+    color: gray;
+}
+
+.Male {
+    color: blue;
+}
+
+.Female {
+    color: pink;
+}
+
+.Asexual {
+    color: white;
+}

@@ -1,21 +1,22 @@
-import CharacterList from '../CharacterList/CharacterList';
-import InputFilter from '../InputFilter/InputFilter';
-import Selector from '../Selector/Selector';
+//import CharacterList from '../CharacterList/CharacterList';
+//import InputFilter from '../InputFilter/InputFilter';
+//import Selector from '../Selector/Selector';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"
 import './Home.css'
+import AnimeList from '../AnimeList/AnimeList';
 
 function Home() {
 
     const [animes, setAnimes] = useState([]);
-    const [currentAnime, setCurrentAnime] = useState('all');
-    const [filterName, setFilterName] = useState('');
-    const [characters, setCharacters] = useState([]);
+    //const [currentAnime, setCurrentAnime] = useState('all');
+    //const [filterName, setFilterName] = useState('');
+    //const [characters, setCharacters] = useState([]);
 
-    const handleSelect = (event) => {
-        setCurrentAnime(event.target.value);
-    };
+    //const handleSelect = (event) => {
+    //    setCurrentAnime(event.target.value);
+    //};
 
     useEffect(() => {
         const getAnimes = async() => {
@@ -25,19 +26,19 @@ function Home() {
         getAnimes();
     }, []);
 
-    useEffect(() => {
-        const getCharacters = async() => {
-        const character = await axios.get('http://localhost:8000/animes/characters/' + currentAnime);
-        setCharacters(character.data);
-        //console.log(character.data);
-        };
-        getCharacters();
-    }, [currentAnime]);
+    // useEffect(() => {
+    //     const getCharacters = async() => {
+    //     const character = await axios.get('http://localhost:8000/animes/characters/' + currentAnime);
+    //     setCharacters(character.data);
+    //     //console.log(character.data);
+    //     };
+    //     getCharacters();
+    // }, [currentAnime]);
 
-    const handleFilterName = (value) => {
-        setFilterName(value);
-    };
-    console.log(currentAnime);
+    //const handleFilterName = (value) => {
+    //    setFilterName(value);
+    //};
+    //console.log(currentAnime);
 
     return (
         <> 
@@ -58,14 +59,14 @@ function Home() {
            </Link>
         </div>
 
-         <div className='botonCharacter'>
+         {/* <div className='botonCharacter'>
             <Selector animes={animes} handleSelect={handleSelect} />
             <InputFilter handleFilterName={handleFilterName} />
            
-          </div>
+        </div> */}
           
-        </div>
-          {currentAnime !== "all" && currentAnime !== "" ?
+      </div>
+          {/* {currentAnime !== "all" && currentAnime !== "" ?
             
          
             <Link to={`/addcharacter/${currentAnime}`}>
@@ -73,7 +74,9 @@ function Home() {
             </Link>
           
           : <> </>}
-          <CharacterList characters={characters.filter((char) => char.name.toLowerCase().includes(filterName.toLowerCase()))} />
+          <CharacterList characters={characters.filter((char) => char.name.toLowerCase().includes(filterName.toLowerCase()))} /> */}
+          <AnimeList animes={animes}></AnimeList>
+
         </>
       )
 }

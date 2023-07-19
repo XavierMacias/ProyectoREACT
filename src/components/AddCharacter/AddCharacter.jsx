@@ -50,7 +50,7 @@ function AddCharacter() {
                 API.put("/animes/id/"+res.data._id, config2)
                 .then((res2) => {
                     console.log(res2);
-                    window.location.replace('/');
+                    window.location.replace('/home');
                 });
         });
     }

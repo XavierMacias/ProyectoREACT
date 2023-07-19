@@ -31,10 +31,10 @@ function CharacterDetail() {
             
             <h2 className="charname">{character.name}</h2>
             <div className="info">
-                <p><span className="prop">Gender</span>: {character.gender}</p>
+                <p><span className="prop">Gender</span>: <span className={character.gender}>{character.gender}</span></p>
                 <p><span className="prop">Age</span>: {character.age}</p>
                  <p><span className="prop">Race</span>: {character.race}</p>
-                 <p><span className="prop">Status</span>: {character.status}</p>
+                 <p><span className="prop">Status</span>: <span className={character.status}>{character.status}</span></p>
             </div>
             
             <p className="descriptione">{character.description}</p>
