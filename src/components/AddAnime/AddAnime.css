@@ -31,6 +31,11 @@
  
 }
 
+.descName {
+  display: flex;
+  align-items: center;
+}
+
 .description{
   background-color: #cdd3e8;
   border: none;
@@ -38,6 +43,8 @@
    margin-left: 10px;
    padding: 10px 40px;
    color: #101c50;
+   height: 80px;
+   width: 300px;
    outline-color: rgb(149, 67, 189);
  
 }

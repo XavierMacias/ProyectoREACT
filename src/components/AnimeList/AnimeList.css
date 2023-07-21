@@ -1,0 +1,29 @@
+.animeList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.animeItem {
+    
+    margin: 20px;   
+    border-radius: 20px;
+    color: white;
+    height: auto;
+    background-color: hsla(208, 100%, 97%, 0.73);
+    border-radius: 5%;
+    width: 500px;
+}
+
+.img_anime {
+    width: 500px;
+    height: 300px;
+    border-radius: 5%;
+}
+
+.year2 {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-top: -58px;
+}

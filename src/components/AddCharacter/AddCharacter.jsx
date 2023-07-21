@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { API } from "../../services/api";
 import './AddCharacter.css'
 import { Link } from "react-router-dom"
+import axios from "axios";
 
 const initial_state = {
     name: "",
@@ -17,7 +18,17 @@ const initial_state = {
 function AddCharacter() {
     const [formState, setFormState] = useState(initial_state);
     const { animeId } = useParams();
+    const [raceList, setRaceList] = useState(["Human"]);
     //console.log(animeId);
+
+    useEffect(() => {
+        const getAnimes = async() => {
+        const anime = await axios.get('http://localhost:8000/animes/id/'+animeId);
+            setRaceList(anime.data.races);
+        };
+        getAnimes();
+        //console.log(raceList);
+    }, []);
 
     const handleInput = (ev) => {
         if(ev.target.name === 'image') {
@@ -84,21 +95,31 @@ function AddCharacter() {
                 </select>
                 </div>
 
-                 <div className="raceDescriptionStatus">
+                 {/* <div className="raceDescriptionStatus">
                 <label htmlFor="race">Race</label>
-                <input type="text" id="race" className="otrostres" name="race" required onChange={handleInput} value={formState.race} />
+                <input type="text" id="race" className="otrostres" name="race" required onChange={handleInput} value={formState.race} /> 
+                </div>*/}
+                <div className="raceDescriptionStatus">
+                    <label htmlFor="race">Race:</label>
+                    <select name="race"  className="otrostres" id="race" onChange={handleInput}>
+                        {raceList.map((race,i) => (
+                            <option key={i} value={race}>{race}</option>
+                        ))}
+                    </select>
 
-                <label htmlFor="description">Description</label>
-                <input type="text" id="description"  className="otrostres" name="description" onChange={handleInput} value={formState.description} />
-
-                <label htmlFor="status">Status:</label>
-                <select name="status"  className="otrostres" id="status" onChange={handleInput}>
-                    <option value="Alive">Alive</option>
-                    <option value="Deceased">Deceased</option>
-                    <option value="Unknown">Unknown</option>
-                </select>
+                    <label htmlFor="status">Status:</label>
+                    <select name="status"  className="otrostres" id="status" onChange={handleInput}>
+                        <option value="Alive">Alive</option>
+                        <option value="Deceased">Deceased</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
                 </div>
-                
+
+                <div className="descDiv">
+                <label htmlFor="description">Description</label>
+                <textarea type="text" id="description"  className="descname" name="description" onChange={handleInput} value={formState.description} />
+                </div>
+
                 <div className="image">
                 <label htmlFor="image">Select an image:</label>
                 <input type="file" name="image" accept="image/*" onChange={handleInput} />

@@ -19,8 +19,13 @@ function AddAnime() {
     //console.log(animeId);
 
     const handleInput = (ev) => {
-        const { name, value } = ev.target;
-        setFormState({ ...formState, [name]: value });
+        if(ev.target.name === 'image') {
+            const { name, files } = ev.target;
+            setFormState({ ...formState, [name]: files[0]});
+        } else {
+            const { name, value } = ev.target;
+            setFormState({ ...formState, [name]: value });
+        }
     }
 
     const handleCancel = () => {
@@ -30,7 +35,13 @@ function AddAnime() {
 
     const handleClick = () => {
         console.log(formState);
-        API.post("/animes", formState)
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data',
+            },
+        };
+
+        API.post("/animes", formState, config)
             .then((res) => {
                 console.log(res.data)
                 window.location.replace('/');
@@ -102,10 +113,16 @@ function AddAnime() {
                     })}
                 </ul>
 
-                    
+                <div className="descName">
                 <label htmlFor="description">Description</label>
-                <input type="text" className="description" id="description" name="description" onChange={handleInput} value={formState.description} />
-                
+                <textarea type="text" className="description" id="description" name="description" onChange={handleInput} value={formState.description} />
+                </div>
+
+                <div className="image">
+                    <label htmlFor="image">Select an image:</label>
+                    <input type="file" name="image" accept="image/*" onChange={handleInput} />
+                </div>
+
                 <div className="addCancel">
                 <input type="submit" value="Add" className="add" onClick={handleClick} />
                 <input type="button" value="Cancel" className="cancel" onClick={handleCancel} />

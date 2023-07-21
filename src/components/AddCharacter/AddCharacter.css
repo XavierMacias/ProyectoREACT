@@ -34,12 +34,28 @@
     outline-color: rgb(149, 67, 189);
 }
 
+.descDiv {
+    display: flex;
+    align-items: center;
+}
+
+.descname{
+    color: rgb(29, 29, 97);;;
+    border-left: none;
+    margin: 20px;
+    background-color:hsla(222, 100%, 83%, 0.83);
+    border-radius: 20px;
+    outline-color: rgb(149, 67, 189);
+    height: 100px;
+    width: 400px;
+}
+
 
 .raceDescriptionStatus{
     margin-top: 20px;
     display: flex;
     justify-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 10px;
 }
 
