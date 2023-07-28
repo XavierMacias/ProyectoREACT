@@ -31,6 +31,17 @@
  
 }
 
+.races{
+  padding: 5px 10px;
+  border: none;
+  background-color: #b6b9c4;
+    border-radius: 20px;
+   margin: 10px;
+   color: #101c50;
+   outline-color: rgb(149, 67, 189);
+ 
+}
+
 .descName {
   display: flex;
   align-items: center;

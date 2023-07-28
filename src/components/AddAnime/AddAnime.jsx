@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 const initial_state = {
     name: "",
     year: "",
+    races: [],
     genre: [],
     description: "",
     characters: []
@@ -22,6 +23,9 @@ function AddAnime() {
         if(ev.target.name === 'image') {
             const { name, files } = ev.target;
             setFormState({ ...formState, [name]: files[0]});
+        } else if(ev.target.name === 'races') {
+            const { name, value } = ev.target;
+            setFormState({ ...formState, [name]: value.split(",")});
         } else {
             const { name, value } = ev.target;
             setFormState({ ...formState, [name]: value });
@@ -44,7 +48,7 @@ function AddAnime() {
         API.post("/animes", formState, config)
             .then((res) => {
                 console.log(res.data)
-                window.location.replace('/');
+                window.location.replace('/home');
         });
     }
 
@@ -112,6 +116,11 @@ function AddAnime() {
                         );
                     })}
                 </ul>
+
+                <div className="">
+                    <label htmlFor="races">Races (Separated by commas)</label>
+                     <input type="text" id="races" className="races" name="races" required onChange={handleInput} value={formState.races} />
+                </div>
 
                 <div className="descName">
                 <label htmlFor="description">Description</label>

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import './CharacterList.css';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API } from "../../services/api";
 
 function CharacterList() {
 
@@ -16,6 +17,14 @@ function CharacterList() {
     };
     getCharacter();
   });
+
+  const deleteAnime = () => {
+    API.delete("/animes/"+animeId)
+        .then((res) => {
+            console.log(res.data)
+            window.location.replace('/home');
+    });
+}
 
   return (
     <div>
@@ -48,7 +57,10 @@ function CharacterList() {
       ) : (
         <p>Loading...</p>
       )}
+
+      <button onClick={deleteAnime}>REMOVE ANIME</button>
     </div>
+
   );
 }
 
