@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import './CharacterDetail.css';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { API } from "../../services/api";
 
 function CharacterDetail() {
     const [character, setCharacter] = useState([]);
@@ -16,6 +17,14 @@ function CharacterDetail() {
         };
         getCharacter();
     }, [id]);
+
+    const deleteChar = () => {
+      API.delete("/characters/"+id)
+        .then((res) => {
+          console.log(res);
+          window.location.replace('/home');
+        });
+    }
 
     return (
         <>
@@ -41,6 +50,8 @@ function CharacterDetail() {
 
             <img className="imagen" src={character.image} alt={character.name} />
         </div>
+
+        <button onClick={deleteChar}>REMOVE CHARACTER</button>
         </>
 
         

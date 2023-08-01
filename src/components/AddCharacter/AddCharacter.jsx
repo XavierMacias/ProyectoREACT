@@ -26,6 +26,7 @@ function AddCharacter() {
         const anime = await axios.get('http://localhost:8000/animes/id/'+animeId);
             setRaceList(anime.data.races);
         };
+        initial_state.race = raceList[0];
         getAnimes();
         //console.log(raceList);
     }, []);
